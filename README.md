@@ -1,4 +1,4 @@
-# Cliq Transactions App
+# Payment Transactions Web App
 
 A full-stack web application to simulate payment transactions, built with Angular, Spring Boot, and PostgreSQL. This app allows users to log in, view their incoming and outgoing transactions, and add new transactions. Authentication and authorization are implemented using JWT (JSON Web Tokens), and only logged-in users can access or manipulate transaction data.
 
