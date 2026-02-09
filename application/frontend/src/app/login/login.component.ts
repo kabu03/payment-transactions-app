@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Inject, PLATFORM_ID} from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {Router} from '@angular/router';
@@ -7,7 +7,7 @@ import {MatCard, MatCardContent, MatCardHeader, MatCardTitle} from "@angular/mat
 import {MatFormField, MatLabel} from "@angular/material/form-field";
 import {MatButton} from "@angular/material/button";
 import {MatInput} from "@angular/material/input";
-import {CommonModule} from "@angular/common";
+import {CommonModule, isPlatformBrowser} from "@angular/common";
 import {AuthService} from '../auth/auth.service';
 
 @Component({
@@ -39,7 +39,8 @@ export class LoginComponent {
     private http: HttpClient,
     private router: Router,
     private snackBar: MatSnackBar,
-    private authService: AuthService
+    private authService: AuthService,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) {
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
@@ -55,14 +56,18 @@ export class LoginComponent {
       this.authService.login(loginData.username, loginData.password).subscribe({
         next: () => {
           console.log('Login successful, redirecting...');
-          const redirectUrl = localStorage.getItem('redirectUrl');
-          if (redirectUrl) {
-            console.log('Redirecting to:', redirectUrl);
-            this.router.navigate([redirectUrl]);
-            localStorage.removeItem('redirectUrl');
+          if (isPlatformBrowser(this.platformId)) {
+            const redirectUrl = localStorage.getItem('redirectUrl');
+            if (redirectUrl) {
+              console.log('Redirecting to:', redirectUrl);
+              this.router.navigate([redirectUrl]);
+              localStorage.removeItem('redirectUrl');
+            } else {
+              console.log('Redirecting to home/dashboard');
+              this.router.navigate(['/']); // Redirect to home or dashboard
+            }
           } else {
-            console.log('Redirecting to home/dashboard');
-            this.router.navigate(['/']); // Redirect to home or dashboard
+             this.router.navigate(['/']);
           }
         },
         error: (error) => {
@@ -75,4 +80,3 @@ export class LoginComponent {
   }
 
 }
-

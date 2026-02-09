@@ -1,34 +1,70 @@
 /* Home Page Styles */
-.homeTitle {
-  font-size: 2.5rem;
-  font-weight: 700;
-  /*color: #4a148c;*/
-  color: DarkSlateGray;
-  text-align: center;
-}
-
-.homeParagraph {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: #333;
-  text-align: center;
-  margin: 20px auto;
-  max-width: 1000px;
-  font-weight: 400;
-  padding: 10px;
-  background-color: #ffffff;
-  border-radius: 8px;
-}
-
-.homeParagraph br {
-  margin-bottom: 15px; /* Adds space between the lines */
-}
-
-/* Optional container to keep everything neatly centered */
-.homeContainer {
+.home-wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding: 0 20px;
+  align-items: flex-start;
+  padding-top: 40px;
+  height: 100%;
+}
+
+.home-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
+  max-width: 800px;
+  width: 90%;
+  padding: 40px;
+  text-align: left;
+}
+
+.home-title {
+  font-size: 2rem;
+  color: #263238;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: 500;
+  border-bottom: 2px solid #80cbc4;
+  padding-bottom: 15px;
+  display: inline-block;
+  width: 100%;
+}
+
+.home-content {
+  font-family: 'Roboto', sans-serif;
+  color: #455a64;
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.feature-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.feature-list li {
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #f5f7f8;
+  border-left: 4px solid #0097a7;
+  border-radius: 0 4px 4px 0;
+}
+
+.feature-list strong {
+  color: #006064;
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1.05rem;
+}
+
+.login-note {
+  margin-top: 30px;
+  color: #78909c;
+  font-size: 0.95rem;
+  text-align: center;
+  border-top: 1px solid #eceff1;
+  padding-top: 20px;
 }

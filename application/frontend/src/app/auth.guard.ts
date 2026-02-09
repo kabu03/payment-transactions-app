@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
+import { isPlatformBrowser } from '@angular/common';
 import { AuthService } from './auth/auth.service';
 
 @Injectable({
@@ -7,14 +8,18 @@ import { AuthService } from './auth/auth.service';
 })
 export class AuthGuard implements CanActivate {
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     if (this.authService.isLoggedIn()) {
       return true; // Allow access
     } else {
       // Ensure we're in a browser environment before accessing localStorage
-      if (typeof window !== 'undefined' && window.localStorage) {
+      if (isPlatformBrowser(this.platformId)) {
         // Store the attempted URL for redirecting after login
         localStorage.setItem('redirectUrl', state.url);
       }
@@ -22,9 +27,4 @@ export class AuthGuard implements CanActivate {
       return false; // Block access
     }
   }
-
-
-
-
-
 }

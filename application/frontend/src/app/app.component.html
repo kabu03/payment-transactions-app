@@ -15,29 +15,15 @@
   <mat-sidenav #sidenav mode="side" opened class = "sidenav">
     <mat-nav-list>
       <div class="navItems">
-        <mat-list-item>
-          <a matLine routerLink="/" class = "itemText">Home</a>
-        </mat-list-item>
+        <a mat-list-item routerLink="/" class="itemText">Home</a>
         <mat-divider></mat-divider>
-        <mat-list-item>
-          <a matLine routerLink="/incoming-transactions" class="itemText">Incoming Transactions</a>
-        </mat-list-item>
+        <a mat-list-item routerLink="/incoming-transactions" class="itemText">Incoming Transactions</a>
         <mat-divider></mat-divider>
-        <mat-list-item>
-          <a matLine routerLink="/outgoing-transactions" class="itemText">Outgoing Transactions</a>
-        </mat-list-item>
+        <a mat-list-item routerLink="/outgoing-transactions" class="itemText">Outgoing Transactions</a>
         <mat-divider></mat-divider>
-        <mat-list-item>
-          <a matLine routerLink="/add-transaction" class = "itemText">Add Transaction</a>
-        </mat-list-item>
+        <a mat-list-item routerLink="/add-transaction" class="itemText">Add Transaction</a>
         <mat-divider></mat-divider>
-<!--        <mat-list-item>-->
-<!--          <a matLine routerLink="/remove-transaction" class = "itemText">Remove Transaction</a>-->
-<!--        </mat-list-item>-->
-<!--        <mat-divider></mat-divider>-->
-        <mat-list-item class="logout-item" (click)="logout()">
-          <span matLine class="itemText">Logout</span>
-        </mat-list-item>
+        <a mat-list-item (click)="logout()" class="itemText logout-text">Logout</a>
         <mat-divider></mat-divider>
       </div>
     </mat-nav-list>

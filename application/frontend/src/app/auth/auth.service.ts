@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -20,14 +21,24 @@ export class AuthService {
   private aliasValue: string | null = null;
   private jwtHelper = new JwtHelperService();
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
   getAliasType(): string | null {
-    return localStorage.getItem('aliasType');
+    if (isPlatformBrowser(this.platformId)) {
+      return localStorage.getItem('aliasType');
+    }
+    return null;
   }
 
   getAliasValue(): string | null {
-    return localStorage.getItem('aliasValue');
+    if (isPlatformBrowser(this.platformId)) {
+      return localStorage.getItem('aliasValue');
+    }
+    return null;
   }
 
   login(username: string, password: string): Observable<any> {
@@ -45,24 +56,29 @@ export class AuthService {
 
   private setSession(token: string): void {
     console.log('Token:', token);
-    localStorage.setItem('authToken', token);
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem('authToken', token);
+    }
   }
 
   logout(): void {
-    localStorage.removeItem('authToken');
-    localStorage.removeItem('aliasType');
-    localStorage.removeItem('aliasValue');
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.removeItem('authToken');
+      localStorage.removeItem('aliasType');
+      localStorage.removeItem('aliasValue');
+    }
     this.router.navigate(['/login']);
   }
 
   private setAlias(aliasType: string, aliasValue: string): void {
-    localStorage.setItem('aliasType', aliasType);
-    localStorage.setItem('aliasValue', aliasValue);
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem('aliasType', aliasType);
+      localStorage.setItem('aliasValue', aliasValue);
+    }
   }
 
   isLoggedIn(): boolean {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      // Safely access localStorage here
+    if (isPlatformBrowser(this.platformId)) {
       const token = localStorage.getItem('authToken');
       return token != null && !this.jwtHelper.isTokenExpired(token);
     }
@@ -70,10 +86,12 @@ export class AuthService {
   }
 
   getToken(): string | null {
-    return localStorage.getItem('authToken');
+    if (isPlatformBrowser(this.platformId)) {
+      return localStorage.getItem('authToken');
+    }
+    return null;
   }
 }
-
 
 
 // import { Injectable } from '@angular/core';
