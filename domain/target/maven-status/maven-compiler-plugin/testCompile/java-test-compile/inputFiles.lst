@@ -1,9 +1,0 @@
-/home/karamabujudom/IdeaProjects/CliqApp/domain/src/test/java/GetAllTransactionsUseCaseTest.java
-/home/karamabujudom/IdeaProjects/CliqApp/domain/src/test/java/ValidatorsTest.java
-/home/karamabujudom/IdeaProjects/CliqApp/domain/src/test/java/UseCasesTest.java
-/home/karamabujudom/IdeaProjects/CliqApp/domain/src/test/java/GetInwardTransactionsUseCaseTest.java
-/home/karamabujudom/IdeaProjects/CliqApp/domain/src/test/java/AddTransactionUseCaseTest.java
-/home/karamabujudom/IdeaProjects/CliqApp/domain/src/test/java/GetTransactionsByAliasUseCaseTest.java
-/home/karamabujudom/IdeaProjects/CliqApp/domain/src/test/java/RemoveTransactionUseCaseTest.java
-/home/karamabujudom/IdeaProjects/CliqApp/domain/src/test/java/GetOutwardTransactionsUseCaseTest.java
-/home/karamabujudom/IdeaProjects/CliqApp/domain/src/test/java/GetTransactionByIdUseCaseTest.java

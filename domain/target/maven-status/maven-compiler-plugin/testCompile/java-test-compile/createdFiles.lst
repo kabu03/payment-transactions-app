@@ -1,9 +1,0 @@
-GetTransactionsByAliasUseCaseTest.class
-GetTransactionByIdUseCaseTest.class
-GetInwardTransactionsUseCaseTest.class
-RemoveTransactionUseCaseTest.class
-AddTransactionUseCaseTest.class
-GetAllTransactionsUseCaseTest.class
-ValidatorsTest.class
-GetOutwardTransactionsUseCaseTest.class
-UseCasesTest.class

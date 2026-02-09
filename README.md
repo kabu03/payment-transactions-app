@@ -2,16 +2,6 @@
 
 A full-stack web application to simulate payment transactions, built with Angular, Spring Boot, and PostgreSQL. This app allows users to log in, view their incoming and outgoing transactions, and add new transactions. Authentication and authorization are implemented using JWT (JSON Web Tokens), and only logged-in users can access or manipulate transaction data.
 
-## Table of Contents
-
-- [Features](#features)
-- [Architecture](#architecture)
-- [Technologies](#technologies)
-- [Setup and Installation](#setup-and-installation)
-- [Usage](#usage)
-
----
-
 ## Features
 
 - **User Authentication**: Login required to access transaction data. JWT is used to authorize requests.
@@ -27,28 +17,11 @@ The app follows the **Onion Architecture**, ensuring a clean separation of conce
 - **Repositories** interact with the database.
 - **Entities** represent database models.
 
----
-
 ## Technologies
 
-### Frontend
-- Angular
-- TypeScript
-- HTML/CSS
-- SCSS
-
-### Backend
-- Java
-- Spring Boot
-- Kotlin (some modules)
-- JWT for authentication
-
-### Database
-- PostgreSQL
-- Hibernate
-- JDBC
-
----
+- **Frontend**: Angular, TypeScript, HTML/CSS, SCSS
+- **Backend**: Java, Spring Boot, Kotlin (some modules), JWT for authentication
+- **Database**: PostgreSQL, Hibernate, JDBC
 
 ## Setup and Installation
 
@@ -63,13 +36,13 @@ The app follows the **Onion Architecture**, ensuring a clean separation of conce
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/kabu03/cliq-app.git
-   cd cliq-app
+   git clone https://github.com/kabu03/payment-transactions-app.git
+   cd payment-transactions-app
    ```
 
 2. **Set Up PostgreSQL Database**
 
-   - Create a PostgreSQL database (e.g., `cliq_app_db`).
+   - Create a PostgreSQL database (e.g., `payment_transactions_db`).
    - Note down the database URL, username, and password.
 
 3. **Configure Database Connection**
@@ -77,11 +50,12 @@ The app follows the **Onion Architecture**, ensuring a clean separation of conce
    Open `application.properties` (or `application.yml`) in `src/main/resources/` and set your PostgreSQL connection details:
 
    ```properties
-   spring.datasource.url=jdbc:postgresql://localhost:5432/cliq_app_db
+   spring.datasource.url=jdbc:postgresql://localhost:5432/payment_transactions_db
    spring.datasource.username=your_db_username
    spring.datasource.password=your_db_password
    spring.jpa.hibernate.ddl-auto=update
-   spring.jpa.show-sql=true```
+   spring.jpa.show-sql=true
+   ```
    
 4. **Run the Backend**
 

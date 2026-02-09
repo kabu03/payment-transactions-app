@@ -62,7 +62,7 @@ static PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
     private static TransactionRepository startMenu() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Refactor in progress...");
-        System.out.println("Welcome to the Cliq Payment Transactions application!");
+        System.out.println("Welcome to the Payment Transactions application!");
         System.out.println("Before proceeding, would you like to perform all operations:");
         System.out.println("1. In Memory?");
         System.out.println("2. In Database using JDBC?");

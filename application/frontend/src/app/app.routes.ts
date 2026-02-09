@@ -9,7 +9,7 @@ import {OutgoingTransactionsComponent} from "./outgoing-transactions/outgoing-tr
 import {IncomingTransactionsComponent} from "./incoming-transactions/incoming-transactions.component";
 
 export const routes: Routes = [
-  {path: '', component: HomeComponent, data: {title: 'Home - Cliq App'}},
+  {path: '', component: HomeComponent, data: {title: 'Home - Payment Transactions App'}},
   { path: 'incoming-transactions', component: IncomingTransactionsComponent, data: { title: 'Incoming Transactions' }, canActivate: [AuthGuard] },
   { path: 'outgoing-transactions', component: OutgoingTransactionsComponent, data: { title: 'Outgoing Transactions' }, canActivate: [AuthGuard] },
   {path: 'login', component: LoginComponent, data: {title: 'Login'}},

@@ -1,8 +1,0 @@
-validators/CurrencyValidator.class
-validators/Validator.class
-models/Transaction.class
-models/Alias.class
-validators/TransactionValidator.class
-validators/AliasValidator.class
-models/Alias$AllowedAliasTypes.class
-models/TransactionRepository.class

@@ -5,7 +5,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copy the application's JAR file into the container at /app
-COPY target/my-app-1.0-SNAPSHOT.jar /app/cliqApp.jar
+COPY target/my-app-1.0-SNAPSHOT.jar /app/paymentTransactionsApp.jar
 
 # Expose the port your application runs on (modify if different)
 EXPOSE 8080
@@ -18,4 +18,4 @@ ENV DB_USER=postgres
 ENV DB_PASSWORD=123
 
 # Run the application
-ENTRYPOINT ["java","-jar","my-app-1.0-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","paymentTransactionsApp.jar"]
