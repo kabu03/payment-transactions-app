@@ -84,6 +84,10 @@ The backend server should start on http://localhost:8080.
      ```
      The frontend will be available at http://localhost:4200.
 
+## Web Preview
+
+![Web Preview](application/frontend/src/assets/web-preview.png)
+
 ## Usage
 1. Access the Application
 - Open your browser and go to http://localhost:4200.
